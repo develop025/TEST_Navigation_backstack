@@ -11,6 +11,12 @@ import android.widget.TextView
 import androidx.navigation.fragment.findNavController
 
 class ExampleFragment : Fragment() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        val userName = arguments?.getString("userName")
+        Log.d("Example", "ExampleFragment userName: $userName")
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -19,7 +25,7 @@ class ExampleFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_example, container, false)
 
         val userName = arguments?.getString("userName")
-        Log.d("Example", "userName: $userName")
+
         view.findViewById<TextView>(R.id.tvName).text = userName
         view.findViewById<Button>(R.id.btnProceed).setOnClickListener {
             findNavController().navigate(R.id.action_exampleFragment_to_userProfile, arguments)

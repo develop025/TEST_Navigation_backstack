@@ -10,22 +10,50 @@
         android:name="com.example.android.navigationadvancedsample.CommonFirstFragment"
         android:label="fragment_common_first"
         tools:layout="@layout/fragment_common_first" >
-        <deepLink
+        <!--<deepLink
             android:id="@+id/deepLinkLeaderboardCommon"
             android:autoVerify="true"
-            app:uri="www.example.com/leaderboard/{testParamLeaderboard}/common" />
-
-        <deepLink
-            android:id="@+id/deepLinkRegisterCommon"
-            android:autoVerify="true"
-            app:uri="www.example.com/register/{testParamRegister}/common" />
+            app:uri="www.example.com/leaderboard/{testParamLeaderboard}/common" />-->
 
         <argument
+            android:name="userName"
+            app:nullable="true"
+            app:argType="string" />
+
+        <argument
+            android:name="commonName"
+            app:nullable="true"
+            app:argType="string" />
+
+        <deepLink
+            android:id="@+id/deepLinkCommon"
+            android:autoVerify="true"
+            app:uri="www.example.com/common" />
+
+        <deepLink
+            android:id="@+id/deepLinkCommonUserName"
+            android:autoVerify="true"
+            app:uri="www.example.com/common/{userName}" />
+
+        <deepLink
+            android:id="@+id/deepLinkUserCommon"
+            android:autoVerify="true"
+            app:uri="www.example.com/user/{userName}/common" />
+
+        <deepLink
+            android:id="@+id/deepLinkParentCommon"
+            android:autoVerify="true"
+            app:uri="www.example.com/parent/{commonName}/common" />
+      <!--  <deepLink
+            android:id="@+id/deepLinkRegisterCommon"
+            android:autoVerify="true"
+            app:uri="www.example.com/register/{testParamRegister}/common" />-->
+
+       <!-- <argument
             android:name="testParamLeaderboard"
             app:argType="string" />
         <argument
             android:name="testParamRegister"
-            app:argType="string" />
-
+            app:argType="string" />-->
     </fragment>
 </navigation>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/commonParentNav"
+    app:startDestination="@id/commonParentFragment">
+
+    <fragment
+        android:id="@+id/commonParentFragment"
+        android:name="com.example.android.navigationadvancedsample.CommonParentFragment"
+        android:label="fragment_common_parent"
+        tools:layout="@layout/fragment_common_parent">
+
+        <argument
+            android:name="commonName"
+            app:argType="string" />
+
+        <deepLink
+            android:id="@+id/deepLinkParent"
+            android:autoVerify="true"
+            app:uri="www.example.com/parent/{commonName}" />
+
+       <!-- <action
+            android:id="@+id/action_commonParentFragment_to_commonFirstFragment"
+            app:destination="@id/commonNav" />-->
+    </fragment>
+
+   <!-- <include app:graph="@navigation/common_nav" />-->
+
+</navigation>

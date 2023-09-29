@@ -17,6 +17,7 @@
 package com.example.android.navigationadvancedsample.listscreen
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -38,6 +39,8 @@ class UserProfile : Fragment() {
         val view = inflater.inflate(R.layout.fragment_user_profile, container, false)
 
         val name = arguments?.getString(USERNAME_KEY) ?: "Ali Connors"
+        Log.d("Example", "UserProfile userName: $name")
+
         view.findViewById<TextView>(R.id.profile_user_name).text = name
         return view
     }

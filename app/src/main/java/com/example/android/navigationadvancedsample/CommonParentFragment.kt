@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.android.navigationadvancedsample.listscreen.MyAdapter
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -15,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [CommonFirstFragment.newInstance] factory method to
+ * Use the [CommonParentFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CommonFirstFragment : Fragment() {
+class CommonParentFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -30,18 +29,8 @@ class CommonFirstFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        val userName = arguments?.getString("userName")
-        Log.d("Example", "CommonFirstFragment userName: $userName")
-
         val commonName = arguments?.getString("commonName")
-        Log.d("Example", "CommonFirstFragment commonName: $commonName")
-
-        val testParamLeaderboard = arguments?.getString("testParamLeaderboard")
-        Log.d("Example", "CommonFirstFragment testParamLeaderboard: $testParamLeaderboard")
-
-        val testParamRegister = arguments?.getString("testParamRegister")
-        Log.d("Example", "CommonFirstFragment testParamRegister: $testParamRegister")
-
+        Log.d("Example", "CommonParentFragment commonName: $commonName")
     }
 
     override fun onCreateView(
@@ -49,7 +38,7 @@ class CommonFirstFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_common_first, container, false)
+        return inflater.inflate(R.layout.fragment_common_parent, container, false)
     }
 
     companion object {
@@ -59,12 +48,12 @@ class CommonFirstFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment CommonFirstFragment.
+         * @return A new instance of fragment CommonParentFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            CommonFirstFragment().apply {
+            CommonParentFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

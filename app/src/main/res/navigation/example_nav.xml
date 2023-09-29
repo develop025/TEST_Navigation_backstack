@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/exampleNestedNav"
+    app:startDestination="@id/exampleFragment">
+
+    <fragment
+        android:id="@+id/exampleFragment"
+        android:name="com.example.android.navigationadvancedsample.ExampleFragment"
+        android:label="title_example"
+        tools:layout="@layout/fragment_example">
+
+        <argument
+            android:name="userName"
+            app:argType="string" />
+
+        <deepLink
+            android:id="@+id/deepLinkUser"
+            android:autoVerify="true"
+            app:uri="www.example.com/user/{userName}" />
+
+        <action
+            android:id="@+id/action_exampleFragment_to_userProfile"
+            app:destination="@id/userProfileNav" />
+        <action
+            android:id="@+id/action_exampleFragment_to_commonFirstFragment"
+            app:destination="@id/commonNav" />
+    </fragment>
+
+    <include app:graph="@navigation/user_profile_nav" />
+    <include app:graph="@navigation/common_nav" />
+
+</navigation>
