@@ -17,6 +17,7 @@
 package com.example.android.navigationadvancedsample.formscreen
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -35,6 +36,9 @@ class Register : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_register, container, false)
+
+        val testParamRegister = arguments?.getString("testParamRegister")
+        Log.d("Example", "testParamRegister: $testParamRegister")
 
         view.findViewById<Button>(R.id.signup_btn).setOnClickListener {
             findNavController().navigate(R.id.action_register_to_registered)

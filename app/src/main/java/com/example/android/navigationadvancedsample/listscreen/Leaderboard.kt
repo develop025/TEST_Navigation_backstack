@@ -17,6 +17,7 @@
 package com.example.android.navigationadvancedsample.listscreen
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -37,6 +38,9 @@ class Leaderboard : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_leaderboard, container, false)
+
+        val testParamLeaderboard = arguments?.getString("testParamLeaderboard")
+        Log.d("Example", "testParamLeaderboard: $testParamLeaderboard")
 
         val viewAdapter = MyAdapter(Array(10) { "Person ${it + 1}" })
 
