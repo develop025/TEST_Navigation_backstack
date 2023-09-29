@@ -27,7 +27,7 @@ versions.annotations = "1.0.0"
 versions.apache_commons = "2.5"
 versions.appcompat = "1.2.0-alpha02"
 versions.arch_core = "2.1.0"
-versions.atsl_core = "1.3.0"a
+versions.atsl_core = "1.3.0"
 versions.atsl_junit = "1.1.2"
 versions.atsl_rules = "1.3.0"
 versions.atsl_runner = "1.3.0"
@@ -67,9 +67,8 @@ ext.versions = versions
 
 def build_versions = [:]
 build_versions.min_sdk = 16
-build_versions.compile_sdk = 29
-build_versions.target_sdk = 29
-build_versions.build_tools = "29.0.3"
+build_versions.compile_sdk = 30
+build_versions.target_sdk = 30
 ext.build_versions = build_versions
 
 def deps = [:]
@@ -225,4 +224,5 @@ def addRepos(RepositoryHandler handler) {
     handler.jcenter()
     handler.maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
 }
+
 ext.addRepos = this.&addRepos
