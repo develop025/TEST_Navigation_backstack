@@ -37,8 +37,8 @@ class Register : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_register, container, false)
 
-        val testParamRegister = arguments?.getString("testParamRegister")
-        Log.d("Example", "testParamRegister: $testParamRegister")
+//        val testParamRegister = arguments?.getString("testParamRegister")
+//        Log.d("Example", "testParamRegister: $testParamRegister")
 
         view.findViewById<Button>(R.id.signup_btn).setOnClickListener {
             findNavController().navigate(R.id.action_register_to_registered)

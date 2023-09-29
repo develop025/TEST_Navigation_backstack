@@ -39,8 +39,8 @@ class Leaderboard : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_leaderboard, container, false)
 
-        val testParamLeaderboard = arguments?.getString("testParamLeaderboard")
-        Log.d("Example", "testParamLeaderboard: $testParamLeaderboard")
+//        val testParamLeaderboard = arguments?.getString("testParamLeaderboard")
+//        Log.d("Example", "testParamLeaderboard: $testParamLeaderboard")
 
         val viewAdapter = MyAdapter(Array(10) { "Person ${it + 1}" })
 
