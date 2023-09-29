@@ -19,6 +19,13 @@ adb shell am start -W -a android.intent.action.VIEW -d "https://www.example.com/
 adb shell am start -W -a android.intent.action.VIEW -d "https://www.example.com/parent/Profile%202"
 adb shell am start -W -a android.intent.action.VIEW -d "https://www.example.com/parent/Profile%202/common"
 
+adb shell am start -W -a android.intent.action.VIEW -d "https://www.example.com/exampleNestedNav/common"
+adb shell am start -W -a android.intent.action.VIEW -d "https://www.example.com/commonParentNav/common"
+
+adb shell am start -W -a android.intent.action.VIEW -d "https://www.example.com/parent"
+adb shell am start -W -a android.intent.action.VIEW -d "https://www.example.com/parent/common"
+adb shell am start -W -a android.intent.action.VIEW -d "https://www.example.com/example"
+adb shell am start -W -a android.intent.action.VIEW -d "https://www.example.com/example/common"
 /Users/dev/Library/Android/sdk
 $HOME/Library/Android/sdk/platform-tools
 

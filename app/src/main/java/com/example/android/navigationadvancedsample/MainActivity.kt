@@ -17,6 +17,7 @@
 package com.example.android.navigationadvancedsample
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var appBarConfiguration: AppBarConfiguration
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -49,9 +51,36 @@ class MainActivity : AppCompatActivity() {
 
         // Setup the ActionBar with navController and 3 top level destinations
         appBarConfiguration = AppBarConfiguration(
-            setOf(R.id.titleScreen, R.id.leaderboard,  R.id.register)
+            setOf(R.id.titleScreen, R.id.leaderboard, R.id.register)
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
+
+        navHostFragment.navController.addOnDestinationChangedListener { controller, destination, arguments ->
+          /*  val treeId = arguments?.getString("treeId")
+            Log.d(
+                "Example",
+                "OnDestinationChangedListener destination:${destination.displayName}, treeId: $treeId"
+            )
+            if (destination.id == R.id.commonFirstFragment) {
+//                val args = destination.arguments
+//                if (args.containsKey("treeId")) {
+//                    val treeIdD = args.getValue("treeId")
+                *//*Log.d("Example", "treeIdD: $treeIdD")
+                if ("exampleNestedNav".equals(treeIdD)) {
+                    controller.navigate(R.id.exampleNestedNav);
+                } else if ("commonParentNav".equals(treeIdD)) {
+                    controller.navigate(R.id.commonParentNav);
+                }
+*//*
+                Log.d("Example", "treeId: $treeId")
+                if ("exampleNestedNav" == treeId) {
+                    controller.navigate(R.id.exampleNestedNav);
+                } else if ("commonParentNav" == treeId) {
+                    controller.navigate(R.id.commonParentNav);
+                }
+//                }
+            }*/
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

@@ -10,21 +10,11 @@
         android:name="com.example.android.navigationadvancedsample.CommonParentFragment"
         android:label="fragment_common_parent"
         tools:layout="@layout/fragment_common_parent">
-
-        <argument
-            android:name="commonName"
-            app:argType="string" />
-
-        <deepLink
-            android:id="@+id/deepLinkParent"
-            android:autoVerify="true"
-            app:uri="www.example.com/parent/{commonName}" />
-
-       <!-- <action
-            android:id="@+id/action_commonParentFragment_to_commonFirstFragment"
-            app:destination="@id/commonNav" />-->
     </fragment>
 
-   <!-- <include app:graph="@navigation/common_nav" />-->
+    <include app:graph="@navigation/common_nav_2" />
 
+    <deepLink
+        android:id="@+id/deepLinkCommonParentNav"
+        app:uri="www.example.com/parent" />
 </navigation>

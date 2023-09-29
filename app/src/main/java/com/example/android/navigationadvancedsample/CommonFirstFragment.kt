@@ -30,7 +30,10 @@ class CommonFirstFragment : Fragment() {
             param2 = it.getString(ARG_PARAM2)
         }
 
-        val userName = arguments?.getString("userName")
+      /*  val treeId = arguments?.getString("treeId")
+        Log.d("Example", "CommonFirstFragment treeId: $treeId")*/
+
+        /*val userName = arguments?.getString("userName")
         Log.d("Example", "CommonFirstFragment userName: $userName")
 
         val commonName = arguments?.getString("commonName")
@@ -40,7 +43,7 @@ class CommonFirstFragment : Fragment() {
         Log.d("Example", "CommonFirstFragment testParamLeaderboard: $testParamLeaderboard")
 
         val testParamRegister = arguments?.getString("testParamRegister")
-        Log.d("Example", "CommonFirstFragment testParamRegister: $testParamRegister")
+        Log.d("Example", "CommonFirstFragment testParamRegister: $testParamRegister")*/
 
     }
 
